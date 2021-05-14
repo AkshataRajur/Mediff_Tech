@@ -1,0 +1,20 @@
+def group_by_owners(files):
+    result = {}
+    for file, owner in files.items():  # use files.iteritems() on Python 2.x
+        result[owner] = result.get(owner, []) + [file]  # you can use setdefault(), too
+    return result
+
+files = {
+    'Input.txt': 'Akshata',
+    'Code.py': 'Rajoor',
+    'Output.txt': 'Akshata',
+    'Input1.txt': 'Aditi',
+    'Code.py': 'Rajoor',
+    'Output.txt': 'Aditi',
+    'Input2.txt': 'Amit',
+    'Code.py': 'Rajoor',
+    'Output.txt': 'Amit'
+}
+
+print(group_by_owners(files))
+# {'Stan': ['Code.py'], 'Randy': ['Output.txt', 'Input.txt']}

@@ -1,0 +1,28 @@
+def group_by_owners(files):
+    result = {}
+    for file, owner in files.items():  
+        result[owner] = result.get(owner, []) + [file]  
+    return result
+
+files = {
+    'Input.txt': 'Akshata',
+    'Code.py': 'Rajoor',
+    'Output.txt': 'Akshata',
+}
+
+files1 = {
+    'Input.txt': 'Aditi',
+    'Code.py': 'Rajoor',
+    'Output.txt': 'Aditi',
+}
+
+files2 = {
+    'Input.txt': 'Amit',
+    'Code.py': 'Rajoor',
+    'Output.txt': 'Amit'
+}
+
+
+print(group_by_owners(files))
+print(group_by_owners(files1))
+print(group_by_owners(files2))
